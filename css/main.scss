@@ -1,0 +1,61 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/////// BANNER
+.banner{
+    background: url('../img/team-photo.jpg');
+    background-position:  center center ;
+    background-repeat:no-repeat;
+    background-size:cover;
+    font-size: 1em;
+    height: 960px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    
+    .logo{
+        height: 275px;
+        width: 225px;
+        margin: 50px 0 0 50px;
+    }
+}
+
+.main{
+    @extend .row;
+
+    .left_bar{
+        @extend .col-lg-3;
+        @extend .col-md-1;
+    }
+    .content{
+        @extend .col-lg-6;
+        @extend .col-md-7;
+        @extend .col-xs-12;
+    }
+    .right_bar{
+        @extend .col-lg-3;
+        @extend .col-md-4;
+        @extend .col-xs-12;
+    }
+}
+
+$border: 1px solid black; 
+
+table {
+    width:650px;
+    border: $border;
+
+    >tbody > tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+            >th{
+                    text-align: center;
+                    border: $border;
+                    background-color: #ff8200;
+            }
+            >td{
+                vertical-align: top;
+                border: $border;
+                padding: 5px 10px;
+            }
+    }
+}
