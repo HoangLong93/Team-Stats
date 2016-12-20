@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/main.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/main.css" rel="stylesheet">
 
     <!-- Include the AngularJS library -->
-    <script src="node_modules/angular/angular.min.js"></script>
-        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.formation.js"></script>
     </head>
     <body ng-app="TeamStats">
         <div class="banner img-responsive">
@@ -14,7 +15,8 @@
         </div>
         <div class="container-fluid">
             <div class="main" ng-controller="MainController">                
-                <div class="left_bar"></div>
+                <div class="left_bar">
+                </div>
                 <div class="content">
                     <div class="standing">
                         <table>
@@ -61,12 +63,11 @@
                         </table>
                     </div>
                 </div>
-                <div class="right_bar">                    
-                    <!--<div class="team-info">
-                        <div ng-repeat="player in players">
-                            {{ player.Name}}
-                        </div>
-                    </div>-->
+                <div class="right_bar">         
+                    <div id="matchfield"></div>
+                    <button onclick="$('#matchfield').formation('setPlayingSystem','3-3-1')" value="3-3-1">3-3-1</button>
+                    <button onclick="$('#matchfield').formation('setPlayingSystem','2-4-1')" value="2-4-1">2-4-1</button>
+                    <button onclick="$('#matchfield').formation('setPlayingSystem','3-2-2')" value="3-2-2">3-2-2</button>
                 </div>
             </div>
         </div>
@@ -80,5 +81,19 @@
         <!-- Services -->
 
         <!-- Directives -->
+
+        <!--JQuery-->
+        <script type="text/javascript">
+            var formation = $('#matchfield').formation({system: '3-3-1'});
+            $('#matchfield').formation("addPlayer", 1, 1, 1, "No1");
+            $('#matchfield').formation("addPlayer", 2, 2, 2, "No2");
+            $('#matchfield').formation("addPlayer", 3, 3, 3, "No3");
+            $('#matchfield').formation("addPlayer", 4, 4, 4, "No4");
+            $('#matchfield').formation("addPlayer", 5, 5, 5, "No5");
+            $('#matchfield').formation("addPlayer", 6, 6, 6, "No6");
+            $('#matchfield').formation("addPlayer", 7, 7, 7, "No7");
+            $('#matchfield').formation("addPlayer", 8, 8, 8, "No8");
+
+        </script>
     </body>
 </html>
